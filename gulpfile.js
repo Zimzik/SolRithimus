@@ -28,7 +28,7 @@ gulp.task('less', function() {
 
 gulp.task('webpack', function(){
 	return gulp.src('app/js/script.js')
-		.pipe(webpack( require('./webpack.config.js') ))
+		.pipe(webpack( require('./1webpack.config.js') ))
 		.pipe(gulp.dest('dist/js'))
 		.pipe(browserSync.stream());
 });
@@ -63,5 +63,39 @@ gulp.task('serve', function() {
 });
 
 gulp.task('dev', gulp.series('build', gulp.parallel('serve')));
+
+//for Admin panel
+
+gulp.task('adm:less', function () {
+  return gulp.src('admin-panel/less/styles.less')
+    .pipe(less())
+    .pipe(gcmq())
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
+    .pipe(gulp.dest('./admin-panel/css'))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('adm:webpack', function(){
+  return gulp.src('admin-panel/src/script.js')
+    .pipe(webpack( require('./webpack.config.js') ))
+    .pipe(gulp.dest('admin-panel/js'))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('adm:serve', function() {
+  browserSync.init({
+    server: './admin-panel'
+  });
+
+  gulp.watch('./admin-panel/less/**/*.*', gulp.series('adm:less'));
+  gulp.watch('./admin-panel/src/**/*.*', gulp.series('adm:webpack'));
+});
+
+gulp.task('adm:build', gulp.series(gulp.parallel('adm:webpack', 'adm:less')));
+
+gulp.task('adm:dev', gulp.series('adm:build', gulp.parallel('adm:serve')));
 
 
