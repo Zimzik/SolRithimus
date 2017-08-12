@@ -128,47 +128,15 @@ body {
       }
     }
 
-    .poem-editing {
+    .workfield {
       padding: 20px;
       width:1170 - 150px;
       height: 540px;
       background-color: #e2e3e7;
       border-radius: 20px;
-
-      .new-poem {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 450px;
-
-        .poem-title {
-          margin-bottom: 10px;
-          height: 30px;
-          padding: 10px;
-        }
-
-        .poem-body {
-          margin-bottom: 10px;
-          height: 400px;
-          padding: 10px;
-          resize: none;
-        }
-
-        .date-and-submit {
-          display: flex;
-          justify-content: space-between;
-        }
-
-        .poem-date {
-          width: 150px;
-          height: 30px;
-        }
-
-        .submit {
-          width: 120px;
-          height: 50px;
-        }
-      }
     }
+
+    @import 'new-poem';
+    @import 'edit-poem';
   }
 }
