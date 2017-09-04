@@ -1,10 +1,9 @@
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-	entry: './app/js/script.js',
+	entry: './public/main-page/app/js/script.js',
 	output: {
-		path: __dirname + '/dist/js',
+		path: __dirname + 'public/main-page/dist/js',
 		filename: 'script.js'
 	},
 	module: {

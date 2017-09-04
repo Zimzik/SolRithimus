@@ -1,9 +1,9 @@
 const webpack = require('webpack');
 
 module.exports = {
-  entry: './admin-panel/src/script.js',
+  entry: './public/admin-panel/app/js/script.js',
   output: {
-    path: __dirname + '/admin-panel/js',
+    path: __dirname + '/public/admin-panel/dist/js',
     filename: 'script.js'
   },
   module: {
@@ -13,7 +13,8 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
-          presets: ['react', 'es2015']
+          presets: ['react', 'es2015'],
+          compact: false
         }
       }
     ]

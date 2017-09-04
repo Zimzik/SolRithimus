@@ -1,61 +1,5 @@
-let poems = [
-  {title: 'Sol rithimius',
-    date: '22 грудня, 2017',
-    img: 'img/pics/poem1.png',
-    poem: 'Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n'},
-  {title: 'Viridi ligno',
-    date: '11 червня, 2017',
-    img: 'img/pics/poem2.png',
-    poem: 'Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n'},
-  {title: 'Igens papiliomen',
-    date: '6 вересня, 2017',
-    img: 'img/pics/poem3.png',
-    poem: 'Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n'},
-  {title: 'Bruin ursi',
-    date: '19 жовтня, 2017',
-    img: 'img/pics/poem4.png',
-    poem: 'Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n'},
-  {title: 'Holey medius soccus',
-    date: '1 квітня, 2017',
-    img: 'img/pics/poem5.png',
-    poem: 'Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n'},
-  {title: 'Puer laetanem',
-    date: '20 січня, 2017',
-    img: 'img/pics/poem6.png',
-    poem: 'Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n'},
-  {title: 'Delecamenti popon',
-    date: '9 вересня, 2017',
-    img: 'img/pics/poem7.png',
-    poem: 'Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n'},
-  {title: 'Palmam lingo',
-    date: '15 липня, 2017',
-    img: 'img/pics/poem8.png',
-    poem: 'Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n'},
-  {title: 'Solis occasum',
-    date: '30 червня, 2017',
-    img: 'img/pics/poem9.png',
-    poem: 'Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n'},
-  {title: 'Poem1',
-    date: '22.12.1988',
-    img: 'img/pics/poem1.png',
-    poem: 'Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n'},
-  {title: 'Poem1',
-    date: '22.12.1988',
-    img: 'img/pics/poem1.png',
-    poem: 'Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n'},
-  {title: 'Poem1',
-    date: '22.12.1988',
-    img: 'img/pics/poem1.png',
-    poem: 'Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n'},
-  {title: 'Poem1',
-    date: '22.12.1988',
-    img: 'img/pics/poem1.png',
-    poem: 'Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n'},
-  {title: 'Poem1',
-    date: '22.12.1988',
-    img: 'img/pics/poem1.png',
-    poem: 'Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n   Lorem ipsum dolor sit amet, consectetur. \n'}
-];
+import React from 'react';
+
 
 class PoemsList extends  React.Component {
   constructor(props) {
@@ -63,6 +7,7 @@ class PoemsList extends  React.Component {
   }
 
   render() {
+
     const { poemsList, onPoemClick, activePoemIndex, editingPoemIndex, editingPoemClick } = this.props;
     let poemsTemplate = poemsList.map((el, index) => {
       return (
