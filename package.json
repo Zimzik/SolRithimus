@@ -4,9 +4,15 @@
   "description": "",
   "main": "webpack.config.js",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.2",
     "express": "^4.15.3",
+    "jwt-simple": "^0.5.1",
     "moment": "^2.18.1",
-    "mongoose": "^4.11.9"
+    "mongoose": "^4.11.9",
+    "morgan": "^1.8.2",
+    "passport": "^0.4.0",
+    "passport-jwt": "^3.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
