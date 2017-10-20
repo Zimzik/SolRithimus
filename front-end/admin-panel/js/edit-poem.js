@@ -1,25 +1,52 @@
 import React from 'react';
 import DayPickerInput from 'react-day-picker/DayPickerInput'
 import moment from 'moment';
+import Dialog from './dialog';
+import xhr from './xhr';
+
+// Set local settings for displaying a current ukrainian date
+
 moment.updateLocale('en', {
-  months: ["Січня", "Лютого", "Березня", "Квітня", "Травня", "Червня", "Липня", "Серпня", "Вересня", "Жовтня", "Листопада", "Грудня"]
+  months: [
+    "Січня",
+    "Лютого",
+    "Березня",
+    "Квітня",
+    "Травня",
+    "Червня",
+    "Липня",
+    "Серпня",
+    "Вересня",
+    "Жовтня",
+    "Листопада",
+    "Грудня"
+  ]
 });
 
-class PoemsList extends  React.Component {
+// Poems list component
+
+class PoemsList extends React.Component {
   constructor(props) {
     super(props)
   }
 
   render() {
 
-    const { poemsList, onPoemClick, activePoemIndex, editingPoemIndex, editingPoemClick, deletingPoemClick } = this.props;
+    const {
+      poemsList,
+      onPoemClick,
+      activePoemIndex,
+      editingPoemIndex,
+      editingPoemClick,
+      deletingPoemClick
+    } = this.props;
     let poemsTemplate = poemsList.map((el, index) => {
       let transDate = moment(el.date).format('D MMMM, YYYY');
       return (
-        <div key = {index}
-             className={activePoemIndex === index ? 'poem activePoem' : 'poem'}
-             onClick={() => onPoemClick(index)} id={el._id}>
-          <img src={el.img} />
+        <div key={index} className={activePoemIndex === index
+          ? 'poem activePoem'
+          : 'poem'} onClick={() => onPoemClick(index)} id={el._id}>
+          <img src={el.img}/>
           <div className="poemInfo">
             <p className="poemTitle">{el.title}</p>
             <p className="poemDate">{transDate}</p>
@@ -34,8 +61,9 @@ class PoemsList extends  React.Component {
 
     return (
       <div className="poemsList">
-        <div className={editingPoemIndex == -1 ? "" : "poemBlocking"}>
-        </div>
+        <div className={editingPoemIndex == -1
+          ? ""
+          : "poemBlocking"}></div>
         <h2>Список віршів:</h2>
         <div className="poemsListField">
           {poemsTemplate}
@@ -46,8 +74,9 @@ class PoemsList extends  React.Component {
   }
 }
 
+// Poem block component, that shows full information of a current poem or gives opportunity to change this poem.
 
-class PoemBlock extends  React.Component {
+class PoemBlock extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -61,30 +90,19 @@ class PoemBlock extends  React.Component {
   }
 
   dateChangeHandler(selectedDay, modifiers) {
-    this.setState({
-      editingDate: selectedDay._d,
-      isDisabled: modifiers.disabled
-    });
+    this.setState({editingDate: selectedDay._d, isDisabled: modifiers.disabled});
   }
 
   titleChangeHandler(e) {
-    this.setState({
-      editingTitle: e.target.value
-    })
+    this.setState({editingTitle: e.target.value})
   }
 
   bodyChangeHandler(e) {
-    this.setState({
-      editingBody: e.target.value
-    })
+    this.setState({editingBody: e.target.value})
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({
-      editingDate: nextProps.editingPoem.date,
-      editingTitle: nextProps.editingPoem.title,
-      editingBody: nextProps.editingPoem.body
-    });
+    this.setState({editingDate: nextProps.editingPoem.date, editingTitle: nextProps.editingPoem.title, editingBody: nextProps.editingPoem.body});
   };
 
   render() {
@@ -98,21 +116,12 @@ class PoemBlock extends  React.Component {
       PoemPresentTemplate = (
         <form className="poemBlock">
           <div className="poemInfo">
-            <input type="text"
-             className="titleEdit" 
-             value={editingTitle} 
-             onChange={this.titleChangeHandler}/>
-            <textarea className="bodyEdit" 
-             cols="30" rows="10"
-             value={editingBody} 
-             onChange={this.bodyChangeHandler}/>
-            <div className="date-and-submit">   
-            <DayPickerInput format={DAY_FORMAT}
-                            value={formattedDay}
-                            onDayChange={this.dateChangeHandler}
-            />
-              <input type="button" className="savePoem" value='Зберегти' onClick = {() => saveEditingPoem(editingPoem._id, editingTitle, editingBody, editingDate)}/>
-              <input type="button" value='Відмінити' onClick = {() => cancelChange()}/>
+            <input type="text" className="titleEdit" value={editingTitle} onChange={this.titleChangeHandler}/>
+            <textarea className="bodyEdit" cols="30" rows="10" value={editingBody} onChange={this.bodyChangeHandler}/>
+            <div className="date-and-submit">
+              <DayPickerInput format={DAY_FORMAT} value={formattedDay} onDayChange={this.dateChangeHandler}/>
+              <input type="button" className="save-poem" value='Зберегти' onClick= {() => saveEditingPoem(editingPoem._id, editingTitle, editingBody, editingDate)}/>
+              <input type="button" className="cancel-poem" value='Відмінити' onClick= {() => cancelChange()}/>
             </div>
           </div>
         </form>
@@ -135,7 +144,9 @@ class PoemBlock extends  React.Component {
           <div className="poemBlock">
             {/*<img src=""/>*/}
             <div className="poemInfo">
-              <h2 className="title">Заголовок</h2>
+              <div className="title">
+                <h2>Заголовок</h2>
+              </div>
               <p className="poemsBody">Вірш</p>
               <p className="poemsDate">Дата</p>
             </div>
@@ -152,6 +163,8 @@ class PoemBlock extends  React.Component {
   }
 }
 
+// Edit tabs component. Include poem list and poem showing block.
+
 export default class Edit extends React.Component {
   constructor(props) {
     super(props)
@@ -161,7 +174,9 @@ export default class Edit extends React.Component {
       editingPoem: -1,
       editingPoemIndex: -1,
       editingPoemDate: '',
-      dbmessage: ''
+      deletingPoemIndex: -1,
+      dbmessage: '',
+      showDialog: false
     };
     this.onPoemClick = this.onPoemClick.bind(this);
     this.editingPoemClick = this.editingPoemClick.bind(this);
@@ -169,23 +184,23 @@ export default class Edit extends React.Component {
     this.saveEditingPoem = this.saveEditingPoem.bind(this);
     this.getPoemsList = this.getPoemsList.bind(this);
     this.deletingPoemClick = this.deletingPoemClick.bind(this);
+    this.showDialogWindow = this.showDialogWindow.bind(this);
+    this.dialogClickedOK = this.dialogClickedOK.bind(this);
+    this.dialogClickedCancel = this.dialogClickedCancel.bind(this);
+
   }
 
   getPoemsList() {
-       // TODO: add server call to retrieve poems list
-    let xhr = new XMLHttpRequest();
-    xhr.open('POST', '/api/poemsList', true);
-    xhr.send();
-    xhr.onload = () => {
-      if (xhr.status === 200) {
-        let data = JSON.parse(xhr.response);
-        this.setState({
-          poemsList: data.poemsList
-        });
-      } else {
-        console.error(error);
-      }
-    }
+    // TODO: add server call to retrieve poems list
+
+    xhr('POST', '/auth/poemsList', '', (msg, data) => {
+      let poemsList = data;
+      this.setState({poemsList: poemsList});
+    }, (err) => {
+      console.error(err);
+    }, (err) => {
+      console.error(err);
+    });
   }
 
   componentWillMount() {
@@ -193,103 +208,76 @@ export default class Edit extends React.Component {
   }
 
   onPoemClick(poemIndex) {
-    this.setState({ activePoemIndex: poemIndex});
+    this.setState({activePoemIndex: poemIndex});
   };
 
   editingPoemClick(poemIndex) {
-    this.setState({editingPoemIndex: poemIndex,
-                editingPoemDate: this.state.poemsList[poemIndex].date
-      });
+    this.setState({editingPoemIndex: poemIndex, editingPoemDate: this.state.poemsList[poemIndex].date});
   };
 
-  deletingPoemClick(index) {
-    const {poemsList} = this.state;
-    let willDelete = confirm(`Даний вірш буде відправлено в корзину! Продовжити?`);
-    if (willDelete) {
-      let xhr = new XMLHttpRequest();
-      let data = JSON.stringify({
-        id: poemsList[index]._id,
-        title: poemsList[index].title,
-        body: poemsList[index].body,
-        date: poemsList[index].date
-      });
-      xhr.open('DELETE', '/api/recycle', true);
-      xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
-      xhr.send(data);
-      xhr.onload = () => {
-        if (xhr.status === 200) {
-          let json = JSON.parse(xhr.response);
-          this.setState({
-            dbmessage: json.msg
-          });
-          this.getPoemsList();
-          console.log(json.msg);
-        } else {
-          console.error("There are some problem with moving this poems to recycle!");
-        };
+  showDialogWindow() {
+    this.setState({showDialog: true})
+  }
 
-        xhr.onerror = function(error) {
-          console.error(error);
-        };
-      }
-    }
+  dialogClickedOK() {
+    this.setState({showDialog: false})
+    const {poemsList, deletingPoemIndex} = this.state;
+    let data = JSON.stringify({id: poemsList[deletingPoemIndex]._id, title: poemsList[deletingPoemIndex].title, body: poemsList[deletingPoemIndex].body, date: poemsList[deletingPoemIndex].date});
+
+    xhr('DELETE', '/auth/recycle', data, (msg) => {
+      this.setState({dbmessage: msg, deletingPoemIndex: -1});
+      this.getPoemsList();
+      console.log(msg);
+    }, (err) => {
+      console.error(err);
+    }, (err) => {
+      console.error(err)
+    });
+  }
+
+  dialogClickedCancel() {
+    this.setState({showDialog: false})
+    return true;
+  }
+
+  deletingPoemClick(index) {
+    const {showDialogWindow} = this.props
+    this.setState({deletingPoemIndex: index})
+    this.showDialogWindow();
   }
 
   cancelChange() {
-    this.setState({
-      editingPoemIndex: -1
-    });
+    this.setState({editingPoemIndex: -1});
   }
 
   saveEditingPoem(id, title, body, date) {
-    let xhr = new XMLHttpRequest();
-    let data = JSON.stringify({
-      id: id,
-      title: title,
-      body: body,
-      date: date
-    });
-    xhr.open('PUT', '/api/editPoem', true);
-    xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
-    xhr.send(data);
-    xhr.onload = () => {
-      if (xhr.status === 200) {
-        let json = JSON.parse(xhr.response);
-        this.setState({
-          dbmessage: json.msg,
-          editingPoemIndex: -1,
-        });
-        this.getPoemsList();
-        console.log(json.msg);
-      } else {
-        console.error(json.err);
-      };
-
-      xhr.onerror = function(error) {
-        console.error(error);
-      };
-    }
+    let data = JSON.stringify({id: id, title: title, body: body, date: date});
+    xhr('PUT', '/auth/editPoem', data, (msg) => {
+      this.setState({dbmessage: msg, editingPoemIndex: -1});
+      this.getPoemsList();
+      console.log(msg);
+    }, (err) => {
+      console.log(err);
+    }, (err) => {
+      console.log(err);
+    })
   }
 
   render() {
-    const { poemsList, activePoemIndex, editingPoemIndex, editingPoemDate} = this.state;
-
+    const {poemsList, activePoemIndex, editingPoemIndex, editingPoemDate, showDialog} = this.state;
+    let dialogMessage = "Вірш буде видалено в корзину! Продовжити?";
     return (
       <div className="poems-show">
-          <PoemBlock
-            activePoem={activePoemIndex !== -1 ? poemsList[activePoemIndex] : null}
-            editingPoem = {editingPoemIndex !== -1 ? poemsList[editingPoemIndex] : ''}
-            cancelChange={this.cancelChange}
-            saveEditingPoem={this.saveEditingPoem}
-            editingPoemIndex={editingPoemIndex}
-          />
-          <PoemsList
-            poemsList={poemsList}
-            onPoemClick={this.onPoemClick}
-            editingPoemClick = {this.editingPoemClick}
-            activePoemIndex={activePoemIndex}
-            editingPoemIndex={editingPoemIndex}
-            deletingPoemClick={this.deletingPoemClick}/>
+        <div className={showDialog
+          ? "blocking-wrapper"
+          : "invisible"}></div>
+        <Dialog message={dialogMessage} dialogClass={showDialog
+          ? "dialog-window"
+          : "invisible"} clickedOK={this.dialogClickedOK} clickedCancel={this.dialogClickedCancel}/>
+        <PoemBlock activePoem={activePoemIndex !== -1
+          ? poemsList[activePoemIndex]
+          : null} editingPoem= {editingPoemIndex !== -1 ? poemsList[editingPoemIndex] : ''} cancelChange={this.cancelChange} saveEditingPoem={this.saveEditingPoem} editingPoemIndex={editingPoemIndex}/>
+        <PoemsList poemsList={poemsList} onPoemClick={this.onPoemClick} editingPoemClick={this.editingPoemClick} activePoemIndex={activePoemIndex} editingPoemIndex={editingPoemIndex} deletingPoemClick={this.deletingPoemClick}/>
       </div>
     )
   }

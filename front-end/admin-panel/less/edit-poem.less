@@ -18,26 +18,75 @@
 
     .titleEdit {
       margin-bottom: 10px;
-      height: 30px;
+      height: 54px;
       padding: 10px;
+      font-size: 30px;
+      color: #4b90c5;
+      font-weight: 600;
     }
     .bodyEdit {
       margin-bottom: 10px;
-      height: 320px;
-      padding: 10px;
+      height: 300px;
+      padding: 13px 11px;
       resize: none;
+      color: #776161;
+      font-size: 14px;
+      font-family: sans-serif;
+      font-weight: 600;
     }
     .date-and-submit {
       display: flex;
       justify-content: space-between;
+      margin-top: 5px;
       .dateEdit {
         padding: 5px;
         width: 150px;
         height: 30px;
       }
-      .savePoem {
-        width: 120px;
-        height: 50px;
+      .save-poem {
+        display:inline-block;
+        margin-right: 5px;
+        background:linear-gradient(to bottom, #89c403 5%, #77a809 100%);
+        background-color:#89c403;
+        border-radius:6px;
+        border:1px solid #74b807;
+        color:#ffffff;
+        font-size:15px;
+        padding:6px 24px;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #528009;
+        &:hover {
+          cursor: pointer;
+          background:linear-gradient(to bottom, #77a809 5%, #89c403 100%);
+          background-color:#77a809;
+        }
+        &:active {
+          position:relative;
+          top:1px;
+        }
+      }
+
+      .cancel-poem {
+        display:inline-block;
+        margin-right: 5px;
+        background:linear-gradient(to bottom, #ff0000 5%, #ad3030 100%);
+        background-color:#ad3030;
+        border-radius:6px;
+        border:1px solid #e01212;
+        color:#ffffff;
+        font-size:15px;
+        padding:6px 24px;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #800a0a;
+        &:hover {
+          cursor: pointer;
+          background:linear-gradient(to bottom, #ad3030 5%, #ff0000 100%);
+          background-color:#ad3030;
+        }
+        &:active {
+          position:relative;
+          top:1px;
+        }
       }
     }
 
@@ -46,6 +95,9 @@
       flex-direction: column;
       height: auto;
       .title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         border-radius: 3px;
         border: 2px solid rgba(255,255,255,.8);
         font-size: 30px;
@@ -55,6 +107,12 @@
         height: 50px;
         padding: 10px;
         line-height:1;
+        h2 {
+          font-size: 30px;
+          font-weight: 600;
+          color: #4b90c5;
+          margin: 0;
+        }
       }
       .poemsBody {
         border-radius: 3px;
@@ -67,14 +125,15 @@
         white-space: pre;
       }
       .poemsDate {
-        width: 200px;
+        width: 150px;
         border-radius: 3px;
         border: 2px solid rgba(255,255,255,.8);
-        font-size: 12px;
+        font-size: 13px;
         font-weight: 600;
         color: #8b6b53;
         margin: 0;
         padding: 10px;
+        text-align: center;
       }
     }
   }
@@ -96,7 +155,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      z-index: 100;
+      z-index: 19;
       background-color: grey;
       opacity: .5;
     }

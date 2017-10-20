@@ -1,19 +1,24 @@
+// nmp modules
 let express = require('express'),
     app = express();
-let ololo = 'olo';
 let apiRoutes = express.Router();
+let openRouter = express.Router();
+let authRouter = express.Router();
 let path = require('path');
 let bodyParser = require('body-parser');
 let morgan = require('morgan');
 let passport = require('passport');
-let config = require('./config/database'); // get db config file
-let User = require('./models/user'); // get the mongoose user model
-let Poem = require('./models/poem'); // get the mongoose poem model
-let Recycled = require('./models/recycled'); // get the mongoose recycled model
 let jwt = require('jwt-simple');
 let moment = require('moment');
 let mongoose = require('mongoose');
-let port = 5000;
+
+// own modules
+let config = require('./config'); // get db config file
+let User = require('./models/user'); // get the mongoose user model
+let Poem = require('./models/poem'); // get the mongoose poem model
+let db = require('./db');
+let UserController = require('./controllers').user;
+let PoemController = require('./controllers').poem;
 
 // get our request parameters
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -33,143 +38,59 @@ app.get('/admin', function (req, res) {
   res.sendFile(__dirname + '/public/admin-panel/index.html');
 });
 
-// connect to database
-mongoose.connect(config.database, {useMongoClient: true});
 
+//auth validation
+authRouter.use(UserController.validation);
+
+//user registration
+openRouter.post('/register', UserController.register);
+
+// user authorization
+openRouter.post('/auth', UserController.auth);
+
+// enter admin panel validation
+
+authRouter.post('/userinfo', UserController.userinfo);
+
+// change user password
+
+authRouter.post('/changepass', UserController.changePass);
+
+/******************************************/
 // saving a new poem
 
-apiRoutes.post('/savePoem', function(req, res) {
-  let newPoem = new Poem({
-    title: req.body.title,
-    body: req.body.body,
-    date: moment(req.body.date)
-  });
-  let promise = newPoem.save();
-  promise
-    .then(() => {
-      console.log("Data saved on db");
-      res.json({success: true, msg: "Вірш збережено в базі даних!"})
-    })
-    .catch(err => {
-      console.log(err);
-      res.json({success: false});
-    })
-});
+authRouter.post('/savePoem', PoemController.savePoem);
 
-apiRoutes.put('/editPoem', function(req, res) {
-  Poem.findById({_id: req.body.id}, (err, poem) => {
-    if (err) {
-      console.log(err);
-      res.status(500).json({err: "There are some problem with editing of this record"});
-    } else  {
-      poem.set({
-          title: req.body.title,
-          body: req.body.body,
-          date: req.body.date
-        });
-      let promise = poem.save();
-      promise 
-        .then(() => {
-          res.json({msg: `Poem saved on DB.`});
-        })
-        .catch(err => {
-          console.log(err);
-          res.status(500).json({err: "There are some problem with editing of this record"});
-        })
-    }
-  })
-});
+authRouter.put('/editPoem', PoemController.editPoem);
 
-apiRoutes.delete('/recycle', function(req, res) {
-  let newRecyclePoem = new Recycled({
-    title: req.body.title,
-    body: req.body.body,
-    date: req.body.date
-  });
+authRouter.delete('/recycle', PoemController.recycle);
 
-  let promise = newRecyclePoem.save();
-  promise
-    .then(() => {
-      console.log("Data saved on db");
-      Poem.findOneAndRemove({_id: req.body.id}, (err, doc) => {
-        if (err) {
-          console.log(err);
-          res.status(500).json({msg: "There are some problem with deleting this item!"})
-        } else {
-          res.json({msg: `Poem  moved to the recycle.`});
-        }
-      })
-    })
-    .catch(err => {
-      console.log(err);
-      res.json({success: false});
-    })
-});
+authRouter.delete('/delete', PoemController.delete);
 
-apiRoutes.delete('/delete', function(req, res) {
-  Recycled.findOneAndRemove({_id: req.body.id}, (err, doc) => {
-        if (err) {
-          console.log(err);
-          res.status(500).json({msg: "There are some problem with deleting this item!"});
-        } else {
-          res.json({msg: `Poem  deleted from DB.`});
-        }
-      })
-});
-
-apiRoutes.post('/restore', function(req, res) {
-  let restoredPoem = new Poem({
-      title: req.body.title,
-      body: req.body.body,
-      date: req.body.date
-  });
-  let promise = restoredPoem.save();
-  promise
-    .then(()=>{
-      console.log("Data saved on db");
-      Recycled.findOneAndRemove({_id: req.body.id}, (err, doc) => {
-        if (err) {
-          console.log(err);
-          res.status(500).json({msg: "There are some problem with deleting this item!"})
-        } else {
-          res.json({msg: `Poem  moved to the main list.`});
-        }
-      });
-    })
-    .catch((err)=>{
-      console.log(err);
-      res.json({success: false});
-    })
-})
+authRouter.post('/restore', PoemController.restore);
 
 // to get poems list from DB
 
-apiRoutes.post('/poemsList', function(req, res) {
-  console.log('Connecting to DB...');
-  Poem.find(function(err, poems) {
-    if (err) {
-      console.log(err);
-    } else {
-      res.json({success: true, poemsList: poems});
-    }
-  })
-});
+authRouter.post('/poemsList', PoemController.poemsList);
 
-apiRoutes.post('/recycledPoemsList', function(req, res) {
-  console.log('Connecting to DB...');
-  Recycled.find(function(err, poems) {
-    if (err) {
-      console.log(err);
-    } else {
-      res.json({success: true, poemsList: poems});
-    }
-  })
-})
-
+authRouter.post('/recycledPoemsList', PoemController.recycledPoemsList);
 
 // connect the api routes under /api/*
 app.use('/api', apiRoutes);
 
-app.listen(port, function () {
-  console.log(`Server listening port: ${port}`);
+app.use('/open', openRouter);
+app.use('/auth', authRouter);
+
+
+// connect to database
+  
+db.connect(config.db, (err) => {
+  if (err) {
+    console.log(err)
+  } else {
+    app.listen(config.port, () => {
+      console.log(`Server listening port 5000`);
+    });
+  }
 });
+

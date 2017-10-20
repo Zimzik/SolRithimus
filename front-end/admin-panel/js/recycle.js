@@ -1,4 +1,6 @@
 import React from 'react';
+import Dialog from './dialog';
+import xhr from './xhr';
 import moment from 'moment';
 moment.updateLocale('en', {
   months: ["Січня", "Лютого", "Березня", "Квітня", "Травня", "Червня", "Липня", "Серпня", "Вересня", "Жовтня", "Листопада", "Грудня"]
@@ -89,29 +91,34 @@ export default class Recycle extends React.Component {
     super(props)
     this.state = {
     	poemsList: [],
-    	activePoemIndex: -1
+    	activePoemIndex: -1,
+			showDialog: false,
+			dialogMessage: '',
+			whatClicked: '',
+			activeIndex: -1
     }
     this.getRecycledList = this.getRecycledList.bind(this);
     this.onPoemClick = this.onPoemClick.bind(this);
     this.restorePoemClick = this.restorePoemClick.bind(this);
     this.deletePoemClick = this.deletePoemClick.bind(this);
+		this.showDialogWindow = this.showDialogWindow.bind(this);
+		this.dialogClickedOK = this.dialogClickedOK.bind(this);
+		this.dialogClickedCancel = this.dialogClickedCancel.bind(this);
   }
 
 	getRecycledList() {
 		// TODO: add server call to retrieve poems list
-		let xhr = new XMLHttpRequest();
-		xhr.open('POST', '/api/recycledPoemsList', true);
-		xhr.send();
-		xhr.onload = () => {
-		  if (xhr.status === 200) {
-		    let data = JSON.parse(xhr.response);
-		    this.setState({
-		      poemsList: data.poemsList
-		    });
-		  } else {
-		    console.error(error);
-		  }
-		}
+		
+		xhr('POST', '/auth/recycledPoemsList', '', (msg, data) => {
+			let poemsList = data;
+        this.setState({
+          poemsList: poemsList
+        });
+		}, (err) => {
+			console.error(err);
+		}, (err) => {
+			console.error(err);
+		});
 	}
 
 	componentWillMount() {
@@ -121,72 +128,91 @@ export default class Recycle extends React.Component {
 	onPoemClick(poemIndex) {
    		this.setState({ activePoemIndex: poemIndex});
   	};
+	
+	showDialogWindow() {
+		this.setState({
+			showDialog: true
+		})
+	}
+	
+	dialogClickedOK() {
+		this.setState({
+			showDialog: false
+		})
+		const {whatClicked, poemsList, activeIndex} = this.state;
+		if (whatClicked === 'delete') {
+			let data = JSON.stringify({
+				id: poemsList[activeIndex]._id,
+			});
+			xhr('DELETE', '/auth/delete', data, (msg) => {
+					this.getRecycledList();
+					console.log(msg);
+			}, (err) => {
+				console.log(err)
+			}, (err) => {
+				console.log(err);
+			});
+			this.setState({
+				activeIndex: -1
+			})
+		}
+		
+		if (whatClicked === 'restore') {
+				let data = JSON.stringify({
+					id: poemsList[activeIndex]._id,
+					title: poemsList[activeIndex].title,
+					body: poemsList[activeIndex].body,
+					date: poemsList[activeIndex].date
+				});
+				xhr('POST', '/auth/restore', data, (msg) => {
+					this.setState({
+							dbmessage: msg,
+							activePoemIndex: -1,
+						});
+						this.getRecycledList();
+						console.log(msg);
+				}, (err) => {
+					console.log(err);
+				}, (err) => {
+					console.log(err)
+				});
+				this.setState({
+					activeIndex: -1
+				})
+			}
+	}
+	
+	dialogClickedCancel() {
+		this.setState({
+			showDialog: false,
+			activeIndex: -1
+		})
+	}
 
-  	deletePoemClick(index) {
-  		const {poemsList} = this.state;
-  		let willDelete = confirm(`Даний вірш буде повністю видалено з бази даних! Продовжити?`);
-	    if (willDelete) {
-	      let xhr = new XMLHttpRequest();
-	      let data = JSON.stringify({
-	        id: poemsList[index]._id,
-	      });
-            xhr.open('DELETE', '/api/delete', true);
-            xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
-            xhr.send(data);
-            xhr.onload = () => {
-                if (xhr.status === 200) {
-                    let json = JSON.parse(xhr.response);
-                    this.getRecycledList();
-                    console.log(json.msg);
-                } else {
-                    console.error("There are some problem with moving this poems to recycle!");
-                }
-
-                xhr.onerror = function(error) {
-                    console.error(error);
-                };
-            }
-        } 
+  deletePoemClick(index) {
+			this.setState({
+				whatClicked: 'delete',
+				dialogMessage: "Даний вірш буде повністю видалено з бази даних! Продовжити?",
+				activeIndex: index
+			});
+			this.showDialogWindow();
     }
 
     restorePoemClick(index) {
-    const {poemsList} = this.state;
-    let willRestore = confirm(`Даний вірш буде відновлено в основний список! Продовжити?`);
-    if (willRestore) {
-      let xhr = new XMLHttpRequest();
-      let data = JSON.stringify({
-        id: poemsList[index]._id,
-        title: poemsList[index].title,
-        body: poemsList[index].body,
-        date: poemsList[index].date
-      });
-      xhr.open('POST', '/api/restore', true);
-      xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
-      xhr.send(data);
-      xhr.onload = () => {
-        if (xhr.status === 200) {
-          let json = JSON.parse(xhr.response);
-          this.setState({
-            dbmessage: json.msg,
-            activePoemIndex: -1,
-          });
-          this.getRecycledList();
-          console.log(json.msg);
-        } else {
-          console.error("There are some problem with moving this poems to main list!");
-        };
-
-        xhr.onerror = function(error) {
-          console.error(error);
-        };
-      }
-    }
+			this.setState({
+				whatClicked: 'restore',
+				dialogMessage: "Даний вірш буде відновлено в основний список! Продовжити?",
+				activeIndex: index
+			});
+			this.showDialogWindow();
     }
 
 	render() {
-		const {poemsList, activePoemIndex} = this.state;
+		const {poemsList, activePoemIndex, showDialog, dialogMessage} = this.state;
         return (
               <div className="poems-show">
+								<div className={showDialog ? "blocking-wrapper" : "invisible"}></div>
+								<Dialog message={dialogMessage} dialogClass={showDialog ? "dialog-window" : "invisible"} clickedOK={this.dialogClickedOK} clickedCancel={this.dialogClickedCancel}/> 
                 <PoemBlock
                     activePoem={activePoemIndex !== -1 ? poemsList[activePoemIndex] : null}/>
                 <RecycledPoemsList

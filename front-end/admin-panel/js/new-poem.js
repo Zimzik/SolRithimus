@@ -1,6 +1,10 @@
 import React from 'react';
 import moment from 'moment';
-import DayPickerInput from 'react-day-picker/DayPickerInput'
+import xhr from './xhr';
+import DayPickerInput from 'react-day-picker/DayPickerInput';
+
+// New poem component(tab "New" in workspace)
+
 export default class New extends React.Component {
   constructor(props) {
     super(props);
@@ -44,8 +48,6 @@ export default class New extends React.Component {
 
   onSubmit() {
     let {poemTitleValue, poemBodyValue, poemDateValue, dbmessage, titleMessage, bodyMessage, dateMessage} = this.state;
-    let xhr = new XMLHttpRequest();
-
     if (!poemTitleValue || !poemBodyValue || !poemDateValue) {
       this.setState({
         titleMessage: '',
@@ -83,14 +85,9 @@ export default class New extends React.Component {
               body: poemBodyValue,
               date: poemDateValue
             });
-      xhr.open('POST', '/api/savePoem', true);
-      xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
-      xhr.send(data);
-      xhr.onload = () => {
-        if (xhr.status === 200) {
-          let json = JSON.parse(xhr.response);
-          this.setState({
-            dbmessage: json.msg,
+			xhr('POST', '/auth/savePoem', data, (msg) => {
+				this.setState({
+            dbmessage: msg,
             poemTitleValue: '',
             poemBodyValue: '',
             poemDateValue: '',
@@ -101,15 +98,12 @@ export default class New extends React.Component {
             showBodyMessage: false,
             showDateMessage: false
           });
-          console.log(json.msg);
-        } else {
-          console.error(json.error);
-        };
-
-        xhr.onerror = function(error) {
-          console.error(error);
-        };
-      }
+          console.log(msg);
+			}, (error) => {
+				console.log(error);
+			}, (error) => {
+				console.log(error);
+			})
     }
   }
 
@@ -125,24 +119,24 @@ export default class New extends React.Component {
                  name="poem-title"
                  value={poemTitleValue}
                  onChange={this.titleChangeHandler}
-                 placeholder="Title"/>
+                 placeholder="Назва"/>
           <p className={showTitleMessage  ? 'title-smart-message' : 'smart-message-invisible'}>Будь ласка, введіть назву вірша!</p>
           <textarea name="poem"
                     className={"poem-body " + bodyClass}
                     cols="30" rows="10"
                     value={poemBodyValue}
                     onChange={this.poembodyChangeHandler}
-                    placeholder="Enter your poem here"></textarea>
+                    placeholder="Введіть сюди вірш"></textarea>
           <p className={showBodyMessage  ? 'body-smart-message' : 'smart-message-invisible'}>Вірш в цьому полі не був написаний, треба щось з цим робити:)!</p>
           <div className="date-and-submit">
             <p className={showDateMessage  ? 'date-smart-message' : 'smart-message-invisible'}>Потрібно ввести дату написання вірша!</p>
             <DayPickerInput className={"DayPickerInput " + dateClass}
-                            placeholder="Date"
+                            placeholder="Дата"
                             format={DAY_FORMAT}
                             value={formattedDay}
                             onDayChange={this.dateChangeHandler}
                             />
-            <input type="button" className="submit" value="Save" onClick={() => this.onSubmit()}/>
+            <input type="button" className="submit-button" value="Зберегти" onClick={() => this.onSubmit()}/>
           </div>
         </form>
         <div className="messages">

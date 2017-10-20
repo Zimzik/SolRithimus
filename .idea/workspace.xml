@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="56b68bfc-539d-4648-82e0-501036b611f0" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/config/database.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/passport.js" afterPath="$PROJECT_DIR$/config/passport.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front-end/admin-panel/js/script.js" afterPath="$PROJECT_DIR$/front-end/admin-panel/js/script.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front-end/admin-panel/less/styles.less" afterPath="$PROJECT_DIR$/front-end/admin-panel/less/styles.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/user.js" afterPath="$PROJECT_DIR$/models/user.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="enter.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front-end/admin-panel/js/enter.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="500">
+              <caret line="81" column="3" lean-forward="true" selection-start-line="80" selection-start-column="5" selection-end-line="81" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/front-end/admin-panel/js/script.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-494">
+              <caret line="73" column="35" lean-forward="true" selection-start-line="73" selection-start-column="35" selection-end-line="73" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="mrzimko" />
+        <option value="Zimzik" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/admin-panel/css/style.css" />
+        <option value="$PROJECT_DIR$/admin-panel/js/script.js" />
+        <option value="$PROJECT_DIR$/webpack-adm.config.js" />
+        <option value="$PROJECT_DIR$/admin-panel/less/new-poem.js" />
+        <option value="$PROJECT_DIR$/admin-panel/less/new-poem.less" />
+        <option value="$PROJECT_DIR$/admin-panel/less/edit-poem.less" />
+        <option value="$PROJECT_DIR$/admin-panel/src/trash.js" />
+        <option value="$PROJECT_DIR$/admin-panel/less/styles.less" />
+        <option value="$PROJECT_DIR$/admin-panel/index.html" />
+        <option value="$PROJECT_DIR$/admin-panel/css/daypicker.css" />
+        <option value="$PROJECT_DIR$/admin-panel/src/new-poem.js" />
+        <option value="$PROJECT_DIR$/admin-panel/src/edit-poem.js" />
+        <option value="$PROJECT_DIR$/admin-panel/src/script.js" />
+        <option value="$PROJECT_DIR$/backend/schemas/user.js" />
+        <option value="$PROJECT_DIR$/backend/schemas/poem.js" />
+        <option value="$PROJECT_DIR$/backend/schemas/index.js" />
+        <option value="$PROJECT_DIR$/backend/routes/index.js" />
+        <option value="$PROJECT_DIR$/backend/server.js" />
+        <option value="$PROJECT_DIR$/config/webpackConfigMain/webpack.config.js" />
+        <option value="$PROJECT_DIR$/public/admin-panel/app/less/styles.less" />
+        <option value="$PROJECT_DIR$/config/webpackConfigAdmin/webpack.config.js" />
+        <option value="$PROJECT_DIR$/public/admin-panel/dist/index.html" />
+        <option value="$PROJECT_DIR$/public/admin-panel/app/index.html" />
+        <option value="$PROJECT_DIR$/public/admin-panel/app/less/daypicker.less" />
+        <option value="$PROJECT_DIR$/public/main-page/app/js/header.js" />
+        <option value="$PROJECT_DIR$/public/main-page/app/less/main.less" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/front-end/wpconfig/webpackConfigAdmin/webpack.config.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/front-end/wpconfig/webpackConfigMain/webpack.config.js" />
+        <option value="$PROJECT_DIR$/models/user.js" />
+        <option value="$PROJECT_DIR$/models/poem.js" />
+        <option value="$PROJECT_DIR$/config/database.js" />
+        <option value="$PROJECT_DIR$/gulpfile.js" />
+        <option value="$PROJECT_DIR$/front-end/admin-panel/js/new-poem.js" />
+        <option value="$PROJECT_DIR$/front-end/main-page/index.html" />
+        <option value="$PROJECT_DIR$/front-end/admin-panel/index.html" />
+        <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/front-end/admin-panel/js/edit-poem.js" />
+        <option value="$PROJECT_DIR$/front-end/admin-panel/js/enter.js" />
+        <option value="$PROJECT_DIR$/front-end/admin-panel/js/script.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>false</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>false</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <gulpfiles>
+      <GulpfileState>
+        <gulpfile-path>$PROJECT_DIR$/gulpfile.js</gulpfile-path>
+        <tasks>
+          <GulpTaskState>
+            <task-name>less</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>webpack</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>clean</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>copy</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>build</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>serve</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>dev</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>adm:less</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>adm:clean</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>adm:copy</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>adm:webpack</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>adm:serve</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>adm:build</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>adm:dev</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>default</task-name>
+          </GulpTaskState>
+        </tasks>
+      </GulpfileState>
+    </gulpfiles>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="10" />
+    <option name="y" value="20" />
+    <option name="width" value="1346" />
+    <option name="height" value="688" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="SolRithimus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SolRithimus" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SolRithimus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SolRithimus" type="462c0819:PsiDirectoryNode" />
+              <item name="front-end" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SolRithimus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SolRithimus" type="462c0819:PsiDirectoryNode" />
+              <item name="front-end" type="462c0819:PsiDirectoryNode" />
+              <item name="admin-panel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SolRithimus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SolRithimus" type="462c0819:PsiDirectoryNode" />
+              <item name="front-end" type="462c0819:PsiDirectoryNode" />
+              <item name="admin-panel" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/node_modules/gulp" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Web\SolRithimus\config\webpackConfigMain" />
+      <recent name="D:\Web\SolRithimus\config\webpackConfigAdmin" />
+      <recent name="D:\Web\SolRithimus\config" />
+      <recent name="D:\Web\SolRithimus" />
+      <recent name="D:\Web\SolRithimus\public\admin-panel\app" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Web\SolRithimus\public\admin-panel\app\js" />
+      <recent name="D:\Web\SolRithimus\public\admin-panel\app\less" />
+      <recent name="D:\Web\SolRithimus\admin-panel\css" />
+      <recent name="D:\Web\SolRithimus\admin-panel\less" />
+      <recent name="D:\Web\SolRithimus\admin-panel\img" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+    </configuration>
+    <configuration name="adm:build" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>adm:build</task>
+      </tasks>
+      <arguments />
+      <envs />
+    </configuration>
+    <configuration name="adm:clean" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>adm:clean</task>
+      </tasks>
+      <arguments />
+      <envs />
+    </configuration>
+    <configuration name="adm:copy" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>adm:copy</task>
+      </tasks>
+      <arguments />
+      <envs />
+    </configuration>
+    <configuration name="adm:webpack" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>adm:webpack</task>
+      </tasks>
+      <arguments />
+      <envs />
+    </configuration>
+    <configuration name="default" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>default</task>
+      </tasks>
+      <arguments />
+      <envs />
+    </configuration>
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Gulp.js.adm:webpack" />
+      <item index="1" class="java.lang.String" itemvalue="Gulp.js.adm:clean" />
+      <item index="2" class="java.lang.String" itemvalue="Gulp.js.adm:copy" />
+      <item index="3" class="java.lang.String" itemvalue="Gulp.js.adm:build" />
+      <item index="4" class="java.lang.String" itemvalue="Gulp.js.default" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Gulp.js.default" />
+        <item index="1" class="java.lang.String" itemvalue="Gulp.js.adm:build" />
+        <item index="2" class="java.lang.String" itemvalue="Gulp.js.adm:copy" />
+        <item index="3" class="java.lang.String" itemvalue="Gulp.js.adm:clean" />
+        <item index="4" class="java.lang.String" itemvalue="Gulp.js.adm:webpack" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="56b68bfc-539d-4648-82e0-501036b611f0" name="Default" comment="" />
+      <created>1501746031139</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1501746031139</updated>
+      <workItem from="1501746047784" duration="4359000" />
+      <workItem from="1501756184287" duration="9866000" />
+      <workItem from="1501773527538" duration="14167000" />
+      <workItem from="1502133049467" duration="6086000" />
+      <workItem from="1502179231286" duration="1089000" />
+      <workItem from="1502198303358" duration="5400000" />
+      <workItem from="1502295476661" duration="1151000" />
+      <workItem from="1502347653510" duration="5008000" />
+      <workItem from="1502522389714" duration="3849000" />
+      <workItem from="1504091155372" duration="6421000" />
+      <workItem from="1504115443948" duration="5080000" />
+      <workItem from="1504158241644" duration="18683000" />
+      <workItem from="1504510221824" duration="78000" />
+      <workItem from="1504510467740" duration="7494000" />
+      <workItem from="1504593734487" duration="451000" />
+      <workItem from="1504677176129" duration="15924000" />
+      <workItem from="1505722141437" duration="87000" />
+      <workItem from="1505722467672" duration="10182000" />
+      <workItem from="1505802925995" duration="11950000" />
+      <workItem from="1505889737869" duration="9821000" />
+      <workItem from="1506061187018" duration="189000" />
+      <workItem from="1507027185777" duration="6311000" />
+      <workItem from="1507098138910" duration="3561000" />
+      <workItem from="1507288652624" duration="649000" />
+      <workItem from="1507632376329" duration="5520000" />
+    </task>
+    <task id="LOCAL-00001" summary="First commit">
+      <created>1501748085955</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1501748085997</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Start to develop admin panel.">
+      <created>1501768667337</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1501768667364</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Start to develop admin panel. + fonts&amp;images&amp;css">
+      <created>1501768833218</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1501768833218</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added new features to &quot;Poem-edit&quot; block in menu. Add &quot;edit&quot; and &quot;delete&quot; button + blocking poems-list while edititng a poem.">
+      <created>1502522545281</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1502522545281</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Completely redesigned the structure of the project and added a basic back-end(nodejs+express).">
+      <created>1504530832198</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1504530832198</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add new options of creating and editing poems. Created &quot;Recycle&quot; tab.">
+      <created>1507288907284</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1507288907284</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="153376000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25892857" sideWeight="0.5763547" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25892857" sideWeight="0.42364532" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3218391" sideWeight="0.5029762" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3218391" sideWeight="0.49702382" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24851191" sideWeight="0.52873564" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20853859" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.48192772" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24794745" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32840723" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="First commit" />
+    <MESSAGE value="Start to develop admin panel." />
+    <MESSAGE value="Start to develop admin panel. + fonts&amp;images&amp;css" />
+    <MESSAGE value="Added new features to &quot;Poem-edit&quot; block in menu. Add &quot;edit&quot; and &quot;delete&quot; button + blocking poems-list while edititng a poem." />
+    <MESSAGE value="Completely redesigned the structure of the project and added a basic back-end(nodejs+express)." />
+    <MESSAGE value="Add new options of creating and editing poems. Created &quot;Recycle&quot; tab." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add new options of creating and editing poems. Created &quot;Recycle&quot; tab." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/public/main-page/app/js/poems.js" />
+    <entry file="file://$PROJECT_DIR$/public/main-page/app/less/poems.less" />
+    <entry file="file://$PROJECT_DIR$/public/admin-panel/app/less/trash.less" />
+    <entry file="file://$PROJECT_DIR$/public/admin-panel/app/less/edit-poem.less" />
+    <entry file="file://$PROJECT_DIR$/admin-panel/less/react-datepicker.min.css" />
+    <entry file="file://$PROJECT_DIR$/public/admin-panel/app/src/trash.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/react-datepicker/dist/react-datepicker.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/react-datepicker/lib/year_dropdown.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/react-datepicker/lib/day.js" />
+    <entry file="file://$PROJECT_DIR$/admin-panel/css/react-datepicker.min.css" />
+    <entry file="file://$PROJECT_DIR$/public/admin-panel/css/styles.css" />
+    <entry file="file://$PROJECT_DIR$/public/admin-panel/css/normalize.css" />
+    <entry file="file://$PROJECT_DIR$/public/admin-panel/css/daypicker.css" />
+    <entry file="file://$PROJECT_DIR$/public/admin-panel/app/src/edit-poem.js" />
+    <entry file="file://$PROJECT_DIR$/public/admin-panel/app/src/script.js" />
+    <entry file="file://$PROJECT_DIR$/public/admin-panel/app/src/new-poem.js" />
+    <entry file="file://$PROJECT_DIR$/public/admin-panel/app/less/normalize.less" />
+    <entry file="file://$PROJECT_DIR$/schemas/user.js" />
+    <entry file="file://$PROJECT_DIR$/public/admin-panel/app/js/edit-poem.js" />
+    <entry file="file://$PROJECT_DIR$/public/main-page/app/index.html" />
+    <entry file="file://$PROJECT_DIR$/public/main-page/app/js/about.js" />
+    <entry file="file://$PROJECT_DIR$/config/webpackConfigMain/webpack.config.js" />
+    <entry file="file://$PROJECT_DIR$/public/admin-panel/app/less/new-poem.less" />
+    <entry file="file://$PROJECT_DIR$/public/admin-panel/js/script.js" />
+    <entry file="file://$PROJECT_DIR$/config/webpackConfigAdmin/webpack.config.js" />
+    <entry file="file://$PROJECT_DIR$/public/admin-panel/dist/css/styles.css" />
+    <entry file="file://$PROJECT_DIR$/public/admin-panel/app/less/styles.less" />
+    <entry file="file://$PROJECT_DIR$/public/admin-panel/app/less/daypicker.less" />
+    <entry file="file://$PROJECT_DIR$/public/main-page/dist/index.html" />
+    <entry file="file://$PROJECT_DIR$/public/admin-panel/app/index.html" />
+    <entry file="file://$PROJECT_DIR$/public/admin-panel/dist/index.html" />
+    <entry file="file://$PROJECT_DIR$/public/main-page/app/js/header.js" />
+    <entry file="file://$PROJECT_DIR$/public/main-page/app/less/main.less" />
+    <entry file="file://$PROJECT_DIR$/front-end/wpconfig/webpackConfigAdmin/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="42" lean-forward="false" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/wpconfig/webpackConfigMain/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="6" lean-forward="false" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-523">
+          <caret line="2" column="30" lean-forward="false" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/poem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="30" lean-forward="false" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js" />
+    <entry file="file://$PROJECT_DIR$/schemas/index.js" />
+    <entry file="file://$PROJECT_DIR$/schemas/poem.js" />
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="6" column="25" lean-forward="false" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="602">
+          <caret line="44" column="135" lean-forward="false" selection-start-line="44" selection-start-column="135" selection-end-line="44" selection-end-column="135" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/main-page/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="64" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/admin-panel/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="42" lean-forward="false" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/database.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="1" column="29" lean-forward="false" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="11" column="32" lean-forward="false" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/admin-panel/js/new-poem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/admin-panel/js/edit-poem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1120">
+          <caret line="71" column="34" lean-forward="false" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/admin-panel/js/enter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="81" column="3" lean-forward="true" selection-start-line="80" selection-start-column="5" selection-end-line="81" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/admin-panel/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-494">
+          <caret line="73" column="35" lean-forward="true" selection-start-line="73" selection-start-column="35" selection-end-line="73" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -1,10 +1,15 @@
 @import 'normalize';
 @import 'daypicker';
+@import 'enter'; 
+@import 'dialog';
 
 body {
   background: #192a3e url(../img/pattern.png);
 }
 
+.invisible {
+	display: none;
+}
 
 //==============FONT ICONS
 
@@ -72,26 +77,143 @@ body {
 
 //============MAIN STYLE
 
+.wrapper {
+	position: relative;
+}
+
+.blocking-wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 29;
+	background-color: grey;
+	opacity: .6;
+}
 
 .container {
   display: flex;
   flex-direction: column;
   width: 1170px;
-  margin: 40px auto;
+  margin: auto;
+	padding-top: 40px;
 
   .active-user {
+		position: relative;
     color: #fff;
     margin-bottom: 30px;
     align-self: flex-end;
     margin-right: 20px;
     border: 1px solid #fff;
+		border-radius: 3px;
     line-height: 1;
     padding: 10px;
     .active-user-name {
       display: inline-block;
       padding-right:5px;
     }
+		.icon-gear {
+			display: inline-block;
+			margin-left: 10px;
+			transition: all 0.5s;
+			&:hover {
+				color: lightblue;
+				cursor: pointer;
+			}
+		}
+
+		.icon-gear-clicked {
+			transform: rotate(160deg);
+			color: #267dd3;
+		}
+		.user-menu {
+			display: block;
+			position: absolute;
+			z-index: 20;
+			top: 42px;
+			right: 0;
+			padding: 0;
+			margin: 0;
+			padding: 10px;
+			border: 1px solid grey;
+			border-radius: 3px;
+			color: #014fa1;
+			background-color: #e2e3e7;
+			width: 170px;
+			list-style: none;
+
+
+			li {
+				padding: 5px;
+				border-radius: 3px;
+				transition: 0.3s;
+				&:hover {
+					cursor: pointer;
+					color: blue;
+					background-color: #fff;
+					padding: 5px;
+				}
+				i {
+					margin-right: 5px;
+				}
+			}
+		} 
   }
+	
+	.change-pass {
+		position: absolute;
+		z-index: 20;
+		top: 42px;
+		right: 0;
+		padding: 20px;
+		border: 1px solid grey;
+		border-radius: 3px;
+		color: #014fa1;
+		background-color: #e2e3e7;
+		div {
+			display: flex;
+			justify-content: space-between;
+		}
+		input {
+			margin-top: 5px;
+			margin-bottom: 10px;
+		}
+		
+		.passErrorMessage {
+			color: red;
+			margin: 0;
+		}
+		
+		.passOkMessage {
+			color: green;
+			margin: 0;
+		}
+	}
+	
+	.new-user {
+		position: absolute;
+		z-index: 20;
+		top: 42px;
+		right: 0;
+		padding: 20px;
+		border: 1px solid grey;
+		border-radius: 3px;
+		color: #014fa1;
+		background-color: #e2e3e7;
+		
+		div {
+			display: flex;
+			justify-content: space-between;
+		}
+		input {
+			margin-top: 5px;
+			margin-bottom: 10px;
+		}
+		i {
+			margin-right: 6px;
+		}
+	}
 
   .workspace {
     display: flex;
@@ -141,8 +263,10 @@ body {
       background-color: #e2e3e7;
       border-radius: 20px;
     }
-
+    
+    
     @import 'new-poem';
     @import 'edit-poem';
   }
 }
+
